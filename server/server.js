@@ -28,7 +28,8 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);
+app.use('/api/auth', authRoutes);
+
 
 server.listen(5000, () => console.log('Server running on port 5000'));
