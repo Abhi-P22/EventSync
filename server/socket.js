@@ -6,7 +6,10 @@ dotenv.config();
 const setupSocket = (server) => {
     const io = new Server(server, {
         cors: {
-            origin: 'https://eventsync-five.vercel.app/' || 'https://eventsync-pro.vercel.app/' ,
+           origin: [
+                'https://eventsync-five.vercel.app',
+                'https://eventsync-pro.vercel.app' 
+            ],
             methods: ['GET', 'POST'],
             credentials: true,
         },
