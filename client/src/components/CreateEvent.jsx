@@ -48,7 +48,7 @@ const CreateEvent = ({ onEventCreated }) => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                'http://localhost:5000/api/events/',
+                'https://eventsync-p66k.onrender.com/api/events/',
                 { name, description, date, category, image },
                 { headers: { Authorization: `Bearer ${user.token}` } }
             );
