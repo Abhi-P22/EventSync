@@ -15,7 +15,7 @@ const server = createServer(app);
 const io = setupSocket(server); // Initialize Socket.IO
 
 app.use(cors({
-    origin: https://eventsync-five.vercel.app/ || https://eventsync-pro.vercel.app/,
+    origin: "https://eventsync-five.vercel.app/"|| "https://eventsync-pro.vercel.app/",
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,  
