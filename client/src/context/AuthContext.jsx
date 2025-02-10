@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
                 navigate('/dashboard');
             } else {
                 // Normal User Login
-                const { data } = await axios.post('http://localhost:5000/api/auth/login', credentials);
+                const { data } = await axios.post('https://eventsync-p66k.onrender.com/api/auth/login', credentials);
                 localStorage.setItem('user', JSON.stringify(data));
                 setUser(data);
                 navigate('/dashboard');
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (credentials) => {
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/register', credentials);
+            const { data } = await axios.post('https://eventsync-p66k.onrender.com/api/auth/register', credentials);
             localStorage.setItem('user', JSON.stringify(data));
             setUser(data);
             navigate('/dashboard');
