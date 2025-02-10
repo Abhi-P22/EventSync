@@ -27,7 +27,7 @@ const Dashboard = () => {
 
     const fetchUpcomingEvents = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:5000/api/events?filter=upcoming`);
+            const { data } = await axios.get(`https://eventsync-p66k.onrender.com/api/events?filter=upcoming`);
             setEvents(data);
         } catch (error) {
             console.error('Error fetching upcoming events:', error);
@@ -42,7 +42,7 @@ const Dashboard = () => {
                 date: tempDate || undefined,
             }).toString();
 
-            const { data } = await axios.get(`http://localhost:5000/api/events?${queryParams}`);
+            const { data } = await axios.get(`https://eventsync-p66k.onrender.com/api/events?${queryParams}`);
             setEvents(data);
         } catch (error) {
             console.error('Error fetching filtered events:', error);
