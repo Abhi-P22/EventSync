@@ -1,0 +1,20 @@
+#base image upon which our app will run
+FROM node:18-alpine
+
+#creating app directory from where our app will run inside container
+WORKDIR /app
+
+#copy app dependencies into working directory
+COPY package*.json ./
+
+#Installing dependencies
+RUN npm install
+
+#copying all files from current directory to working directory inside container
+COPY . .
+
+#expose required port
+EXPOSE 8080
+
+#declare executable commands
+CMD ["npm","start"]
